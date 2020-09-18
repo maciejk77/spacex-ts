@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Store } from '../../Store';
 import Card from '../Card';
 
@@ -6,7 +6,7 @@ const Container = ({ activeTab }) => {
   const { store } = useContext(Store);
 
   const rocketsList = (
-    <div>
+    <>
       {store.rockets[0].map((rocket) => {
         return (
           <Card
@@ -20,11 +20,11 @@ const Container = ({ activeTab }) => {
           />
         );
       })}
-    </div>
+    </>
   );
 
   const dragonsList = (
-    <div>
+    <>
       {store.dragons[0].map((dragon) => {
         return (
           <Card
@@ -38,10 +38,25 @@ const Container = ({ activeTab }) => {
           />
         );
       })}
-    </div>
+    </>
   );
 
-  return activeTab === 'Rockets' ? rocketsList : dragonsList;
+  return (
+    <div
+      style={{
+        border: '1px solid gray',
+        marginTop: '-1px',
+        backgroundColor: 'gray',
+        paddingBottom: 10,
+
+        maxWidth: 750,
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}
+    >
+      {activeTab === 'Rockets' ? rocketsList : dragonsList}
+    </div>
+  );
 };
 
 export default Container;

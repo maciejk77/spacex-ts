@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import Tabs from './components/Tabs/index';
 import Container from './components/Container';
 import { Store } from './Store';
@@ -30,10 +30,13 @@ const App: React.FC = () => {
   return (
     <>
       <div style={styles.tabsStyle}>
-        {console.log(store)}
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
-      {fetchingCompleted && <Container activeTab={tabs[activeTab]} />}
+      {fetchingCompleted ? (
+        <Container activeTab={tabs[activeTab]} />
+      ) : (
+        <>LOADING...</>
+      )}
     </>
   );
 };
