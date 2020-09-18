@@ -27,7 +27,7 @@
 ## Additional
 
 - native fetch, asyn/await (data fetching)
-- \*\*\*\* for styling
+- TBC for styling
 
 ## Comments (to be completed)
 
@@ -36,8 +36,8 @@
 ## Special consideration given to
 
 1. Code structure
-2. Quality - tbc
-3. Readability - tbc
+2. Quality
+3. Readability
 
 ## Screenshots
 
