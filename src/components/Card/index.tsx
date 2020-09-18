@@ -60,7 +60,6 @@ const styles = {
     backgroundColor: 'white',
     marginLeft: 10,
     width: 320,
-    // border: '1px solid red',
   },
   listItemStyle: {
     listStyle: 'none',
@@ -68,13 +67,3 @@ const styles = {
 };
 
 export default Card;
-
-//  <div>
-//     <div style={{ display: 'flex', flexDirection: 'column' }}>
-//       <img src={images[0]} width="300" height="300" />
-//       <button onClick={() => setIsExtended(!isExtended)}>
-//         {isExtended ? 'Show less' : 'Show more'}
-//       </button>
-//     </div>
-
-//   </div>
