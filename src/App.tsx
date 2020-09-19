@@ -6,15 +6,14 @@ import { Store } from './Store';
 const App: React.FC = () => {
   const tabs = ['Rockets', 'Dragons'];
   const [ROCKETS, DRAGONS] = tabs;
-
   const [activeTab, setActiveTab] = useState(0);
   const { store, dispatch } = useContext(Store);
   const fetchingCompleted = store.rockets.length && store.dragons.length;
 
   useEffect(() => {
-    store.rockets.length === 0 && fetchDataFor(ROCKETS);
-    store.dragons.length === 0 && fetchDataFor(DRAGONS);
-  });
+    fetchDataFor(ROCKETS);
+    fetchDataFor(DRAGONS);
+  }, []);
 
   const fetchDataFor = async (entity: string) => {
     const URL = `https://api.spacexdata.com/v3/${entity.toLowerCase()}`;
