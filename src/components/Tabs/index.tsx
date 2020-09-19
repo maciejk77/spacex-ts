@@ -1,5 +1,6 @@
 import React from 'react';
 import Tab from '../Tab/index';
+import useStyles from './styles';
 
 interface Props {
   tabs: string[];
@@ -13,25 +14,14 @@ const Tabs: Function = ({
   setActiveTab,
 }: Props): JSX.Element[] =>
   tabs.map((tab, index) => {
-    const tabStyle =
-      activeTab === index ? styles.activeTabStyle : styles.nonActiveTabStyle;
+    const { active, nonActive } = useStyles();
+    const tabStyle = activeTab === index ? active : nonActive;
 
     return (
-      <div key={index} style={tabStyle}>
+      <div key={index} className={tabStyle}>
         <Tab label={tab} onClick={() => setActiveTab(index)} />
       </div>
     );
   });
-
-const styles = {
-  nonActiveTabStyle: {
-    color: 'gray',
-    backgroundColor: 'white',
-  },
-  activeTabStyle: {
-    color: 'white',
-    backgroundColor: 'gray',
-  },
-};
 
 export default Tabs;

@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
+import useStyles from './styles';
 
 const Card = ({
   name,
@@ -9,61 +10,34 @@ const Card = ({
   images,
 }) => {
   const [isExtended, setIsExtended] = useState(false);
+  const {
+    container,
+    header,
+    image,
+    button,
+    list,
+    listItem,
+    text,
+  } = useStyles();
 
   return (
-    <div style={styles.containerStyle}>
-      <img src={images[0]} style={styles.cardStyle} />
-      <div
-        style={styles.buttonStyle}
-        onClick={() => setIsExtended(!isExtended)}
-      >
+    <div className={container}>
+      <img src={images[0]} className={image} />
+      <div className={button} onClick={() => setIsExtended(!isExtended)}>
         {isExtended ? 'collapse' : 'read more'}
       </div>
 
       {isExtended && (
-        <ul style={styles.listStyle}>
-          <p style={styles.listItemStyle}>Name: {name}</p>
-          <li style={styles.listItemStyle}>Diameter: {diameter}</li>
-          <li style={styles.listItemStyle}>Mass[kg]: {mass_kg}</li>
-          <li style={styles.listItemStyle}>Payload mass[kg]:{payload_mass}</li>
-          <p style={{ fontSize: 15 }}>{description}</p>
+        <ul className={list}>
+          <li className={header}>Name: {name}</li>
+          <li className={listItem}>Diameter: {diameter}</li>
+          <li className={listItem}>Mass[kg]: {mass_kg}</li>
+          <li className={listItem}>Payload mass[kg]: {payload_mass}</li>
+          <li className={text}>{description}</li>
         </ul>
       )}
     </div>
   );
-};
-
-const styles = {
-  containerStyle: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardStyle: {
-    margin: '10px 0 0 10px',
-    border: '5px solid white',
-    width: 350,
-    height: 350,
-  },
-  buttonStyle: {
-    fontFamily: 'Andale Mono',
-    position: 'absolute',
-    padding: 7,
-    backgroundColor: 'white',
-    marginTop: 335,
-    marginLeft: 255,
-    width: 100,
-    textAlign: 'center',
-  },
-  listStyle: {
-    fontFamily: 'Andale Mono',
-    marginTop: '-5px',
-    backgroundColor: 'white',
-    marginLeft: 10,
-    width: 320,
-  },
-  listItemStyle: {
-    listStyle: 'none',
-  },
 };
 
 export default Card;

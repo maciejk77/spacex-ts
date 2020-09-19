@@ -1,9 +1,11 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext } from 'react';
 import { Store } from '../../Store';
 import Card from '../Card';
+import useStyles from './styles';
 
 const Container = ({ activeTab }) => {
   const { store } = useContext(Store);
+  const { container } = useStyles();
 
   const rocketsList = (
     <>
@@ -15,7 +17,7 @@ const Container = ({ activeTab }) => {
             description={rocket.description}
             diameter={rocket.diameter.meters}
             mass_kg={rocket.mass.kg}
-            payload_mass={rocket.payload_weights[0].kg} // quick fix
+            payload_mass={rocket.payload_weights[0].kg}
             images={rocket.flickr_images}
           />
         );
@@ -42,18 +44,7 @@ const Container = ({ activeTab }) => {
   );
 
   return (
-    <div
-      style={{
-        border: '1px solid gray',
-        marginTop: '-1px',
-        backgroundColor: 'gray',
-        paddingBottom: 10,
-
-        maxWidth: 750,
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}
-    >
+    <div className={container}>
       {activeTab === 'Rockets' ? rocketsList : dragonsList}
     </div>
   );

@@ -29,22 +29,16 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div style={styles.tabsStyle}>
+      <div style={{ display: 'flex' }}>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
       {fetchingCompleted ? (
         <Container activeTab={tabs[activeTab]} />
       ) : (
-        <>LOADING...</>
+        <p>LOADING...</p>
       )}
     </>
   );
-};
-
-const styles = {
-  tabsStyle: {
-    display: 'flex',
-  },
 };
 
 export default App;
