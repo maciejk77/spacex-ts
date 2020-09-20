@@ -8,9 +8,10 @@ export default createUseStyles(
       fontFamily: 'Andale Mono',
     },
     headerStyle: {
-      fontSize: 20,
+      fontSize: 25,
       fontWeight: 'bold',
       margin: '10px 0',
+      color: 'white',
     },
     imageStyle: {
       margin: '10px 0 0 10px',
@@ -30,16 +31,19 @@ export default createUseStyles(
     listStyle: {
       fontFamily: 'Andale Mono',
       marginTop: '-5px',
-      backgroundColor: 'white',
       marginLeft: 10,
       width: 320,
       listStyle: 'none',
     },
-    listItemStyle: { margin: '5px 0' },
+    listItemStyle: { margin: '8px 0', color: 'white' },
     descriptionStyle: {
-      fontSize: 15,
+      marginBottom: 10,
+      padding: 15,
+      color: 'white',
+      fontSize: 18,
       paddingRight: 40,
       paddingBottom: 20,
+      width: 468,
     },
   },
   { name: 'card' }

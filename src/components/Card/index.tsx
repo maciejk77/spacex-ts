@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useStyles from './styles';
 import Modal from '../Modal/index';
+import Photos from '../Photos/index';
 
 const Card = ({
   name,
@@ -11,6 +12,7 @@ const Card = ({
   images,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const defaultImage = images[0];
   const {
     containerStyle,
     headerStyle,
@@ -23,7 +25,7 @@ const Card = ({
 
   return (
     <div className={containerStyle}>
-      <img src={images[0]} className={imageStyle} />
+      <img src={defaultImage} className={imageStyle} />
       <div className={buttonStyle} onClick={() => setIsOpen(!isOpen)}>
         read more
       </div>
@@ -36,9 +38,7 @@ const Card = ({
             <li className={listItemStyle}>Mass[kg]: {mass_kg}</li>
             <li className={listItemStyle}>Payload mass[kg]: {payload_mass}</li>
             <li className={descriptionStyle}>{description}</li>
-            {images.map((image, index) => (
-              <img key={index} src={image} width="150" height="150" />
-            ))}
+            <Photos photos={images} />
           </ul>
         </Modal>
       )}
