@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(
-  {
+  (theme) => ({
     overlayStyle: {
       position: 'absolute',
       top: 0,
@@ -11,14 +11,14 @@ export default createUseStyles(
       display: 'grid',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'lightgray',
-      opacity: 0.9,
+      backgroundColor: theme.themeColour0,
+      opacity: 0.95,
       height: 1600,
     },
     modalStyle: {
-      top: 90,
+      top: 50,
       padding: 20,
-      background: 'gray',
+      background: theme.themeColour1,
       borderRadius: '2px',
       display: 'inline-block',
       margin: '1rem',
@@ -32,6 +32,6 @@ export default createUseStyles(
       display: 'flex',
       justifyContent: 'space-between',
     },
-  },
+  }),
   { name: 'modal' }
 );

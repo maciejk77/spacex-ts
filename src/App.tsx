@@ -3,6 +3,8 @@ import Tabs from './components/Tabs/index';
 import Container from './components/Container';
 import { Store } from './Store';
 import { BASE_URL, tabs, ROCKETS, DRAGONS } from './consts';
+import { ThemeProvider } from 'react-jss';
+import { theme } from './style';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -26,12 +28,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div style={{ display: 'flex' }}>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
       {isFetching ? <p>LOADING...</p> : <Container activeTab={activeTab} />}
-    </>
+    </ThemeProvider>
   );
 };
 

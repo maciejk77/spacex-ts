@@ -1,15 +1,15 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(
-  {
+  (theme) => ({
     container: {
-      fontFamily: 'Arial',
+      fontFamily: theme.baseFonts,
       fontSize: '18px',
-      border: '1px solid gray',
+      border: `1px solid ${theme.themeColour1}`,
       padding: 10,
       width: 150,
       textAlign: 'center',
     },
-  },
+  }),
   { name: 'tab' }
 );

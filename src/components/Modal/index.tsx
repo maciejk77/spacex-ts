@@ -11,14 +11,16 @@ type Props = {
 const Modal: React.FC<Props> = ({ children, onClose }) => {
   const { overlayStyle, modalStyle, modalContainerStyle } = useStyles();
   const modal = (
-    <div className={overlayStyle}>
+    <>
+      <div className={overlayStyle}> </div>
+
       <div className={modalStyle}>
         <div className={modalContainerStyle}>
           {children}
           <CloseButton onClose={onClose} />
         </div>
       </div>
-    </div>
+    </>
   );
 
   const node = document.getElementById('modal');

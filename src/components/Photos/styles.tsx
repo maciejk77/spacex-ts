@@ -1,9 +1,9 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(
-  {
+  (theme) => ({
     activePhotoStyle: {
-      border: '5px solid lightsalmon',
+      border: `5px solid ${theme.themeColour3}`,
     },
     galleryStyle: {
       marginTop: 5,
@@ -12,13 +12,13 @@ export default createUseStyles(
       justifyContent: 'center',
     },
     photoStyle: {
-      border: '3px solid white',
+      border: `3px solid ${theme.baseColour}`,
       margin: 3,
     },
     activeThumbnailStyle: {
-      border: '3px solid lightsalmon',
+      border: `3px solid ${theme.themeColour3}`,
       margin: 3,
     },
-  },
+  }),
   { name: 'photos' }
 );

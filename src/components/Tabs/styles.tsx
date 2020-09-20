@@ -1,15 +1,15 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(
-  {
+  (theme) => ({
     nonActive: {
-      color: 'gray',
-      backgroundColor: 'white',
+      color: theme.themeColour1,
+      backgroundColor: theme.baseColour,
     },
     active: {
-      color: 'white',
-      backgroundColor: 'gray',
+      color: theme.baseColour,
+      backgroundColor: theme.themeColour1,
     },
-  },
+  }),
   { name: 'tabs' }
 );
