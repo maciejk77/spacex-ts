@@ -2,7 +2,11 @@ import React from 'react';
 
 import useStyles from './styles';
 
-const CloseButton = ({ onClose }) => {
+type Props = {
+  onClose: (boolean: any) => void;
+};
+
+const CloseButton: React.FC<Props> = ({ onClose }) => {
   const { squareStyle, firstLineStyle, secondLineStyle } = useStyles();
   return (
     <div className={squareStyle} onClick={() => onClose(false)}>

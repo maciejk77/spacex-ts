@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import { reducer } from './reducers/index';
 import { IState } from './interfaces/index';
 
-const initialState = {
+const initialState: IState = {
   rockets: [],
   dragons: [],
 };

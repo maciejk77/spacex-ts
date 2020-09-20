@@ -8,11 +8,7 @@ interface Props {
   setActiveTab: (activeTab: number) => number;
 }
 
-const Tabs: Function = ({
-  tabs,
-  activeTab,
-  setActiveTab,
-}: Props): JSX.Element[] =>
+const Tabs: React.FC<Props> = ({ tabs, activeTab, setActiveTab }) =>
   tabs.map((tab, index) => {
     const { active, nonActive } = useStyles();
     const tabStyle = activeTab === index ? active : nonActive;

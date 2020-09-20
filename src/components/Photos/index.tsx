@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import useStyles from './styles';
 
 const Photos = ({ photos }) => {
-  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const {
     activePhotoStyle,
     galleryStyle,
@@ -21,7 +21,7 @@ const Photos = ({ photos }) => {
     />
   );
 
-  const gallery = photos.map((photo, index) => {
+  const gallery = photos.map((photo: string, index: number) => {
     const isActivePhoto = index === activePhotoIndex;
     return (
       <img

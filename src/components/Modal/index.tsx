@@ -3,7 +3,12 @@ import { createPortal } from 'react-dom';
 import useStyles from './styles';
 import CloseButton from '../CloseButton/index';
 
-const Modal = ({ children, onClose }) => {
+type Props = {
+  children: React.ReactChildren;
+  onClose: () => void;
+};
+
+const Modal: React.FC<Props> = ({ children, onClose }) => {
   const { overlayStyle, modalStyle, modalContainerStyle } = useStyles();
   const modal = (
     <div className={overlayStyle}>

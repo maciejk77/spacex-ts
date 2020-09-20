@@ -5,5 +5,5 @@ export interface IState {
 
 export interface IAction {
   type: string;
-  payload: Array<any>;
+  payload: [];
 }

@@ -3,7 +3,16 @@ import useStyles from './styles';
 import Modal from '../Modal/index';
 import Photos from '../Photos/index';
 
-const Card = ({
+type Props = {
+  name: string;
+  description: string;
+  diameter: number;
+  mass_kg: number;
+  payload_mass: number;
+  images: string[];
+};
+
+const Card: React.FC<Props> = ({
   name,
   description,
   diameter,
@@ -11,7 +20,7 @@ const Card = ({
   payload_mass,
   images,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const defaultImage = images[0];
   const {
     containerStyle,

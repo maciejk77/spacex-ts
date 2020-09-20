@@ -2,14 +2,20 @@ import React, { useContext } from 'react';
 import { Store } from '../../Store';
 import Card from '../Card';
 import useStyles from './styles';
+import { IState } from '../../interfaces/index';
+import { tabs, ROCKETS } from '../../consts';
 
-const Container = ({ activeTab }) => {
+type Props = {
+  activeTab: number;
+};
+
+const Container: React.FC<Props> = ({ activeTab }) => {
   const { store } = useContext(Store);
   const { container } = useStyles();
 
   const rocketsList = (
     <>
-      {store.rockets[0].map((rocket) => {
+      {store.rockets[0].map((rocket: IState) => {
         return (
           <Card
             key={rocket.id}
@@ -27,7 +33,7 @@ const Container = ({ activeTab }) => {
 
   const dragonsList = (
     <>
-      {store.dragons[0].map((dragon) => {
+      {store.dragons[0].map((dragon: IState) => {
         return (
           <Card
             key={dragon.id}
@@ -45,7 +51,7 @@ const Container = ({ activeTab }) => {
 
   return (
     <div className={container}>
-      {activeTab === 'Rockets' ? rocketsList : dragonsList}
+      {tabs[activeTab] === ROCKETS ? rocketsList : dragonsList}
     </div>
   );
 };
