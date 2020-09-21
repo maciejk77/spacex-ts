@@ -4,7 +4,7 @@ import useStyles from './styles';
 import CloseButton from '../CloseButton/index';
 
 type Props = {
-  children: React.ReactChildren;
+  children: React.ReactNode;
   onClose: () => void;
 };
 

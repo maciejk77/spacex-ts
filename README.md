@@ -26,12 +26,13 @@
 
 ## Additional
 
-- native fetch, asyn/await (data fetching)
+- native fetch, async/await (data fetching)
 - TBC for styling
 
 ## Comments (to be completed)
 
 - Tests
+- RWD for modal
 
 ## Special consideration given to
 
