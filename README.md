@@ -17,29 +17,24 @@
 - `npm run start` to start Front End app
 - visit `localhost:****` for see the app
 
-## Bonus points
+## Completed
 
 - React hooks (useState, useEffect, useReducer, useContext)
 - Typescript
 - Redux (Redux-like, Store created with useContext and useReducer)
 - Tests (Unit: Jest, react-testing-library, E2E: Cypress )
+- JSS styling
 
 ## Additional
 
 - native fetch, async/await (data fetching)
-- TBC for styling
 
 ## Comments (to be completed)
 
 - Tests
 - RWD for modal
 
-## Special consideration given to
-
-1. Code structure
-2. Quality
-3. Readability
-
 ## Screenshots
 
-![Screenshot](src/assets/screenshot.png)
+<img src="src/assets/screenshot1.png" width="400">
+<img src="src/assets/screenshot2.png" width="400">
