@@ -1,6 +1,6 @@
 # SpaceX App
 
-[Simplified version with react-testing-library tests](https://github.com/maciejk77/spacex-ts-rtl)
+Click here for: [Simplified version with react-testing-library tests](https://github.com/maciejk77/spacex-ts-rtl)
 
 ### Requirements
 
