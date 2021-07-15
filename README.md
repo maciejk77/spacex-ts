@@ -1,5 +1,7 @@
 # SpaceX App
 
+[Simplified version with react-testing-library tests](https://github.com/maciejk77/spacex-ts-rtl)
+
 ### Requirements
 
 - Create JS app to provide SpaceX overview of rockets and dragons
